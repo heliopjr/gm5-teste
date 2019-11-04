@@ -175,6 +175,7 @@ header {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		flex-wrap: wrap;
 
 		@media #{$bp-sm} {
 			flex-direction: column;
@@ -182,10 +183,20 @@ header {
 
 		li {
 			width: 30%;
+				
+			@media #{$bp-md} {
+				width: 50%;
+				padding: 0 20px 0 0;
+
+				&:first-child {
+					width: 100%;
+				}
+			}			
 
 			@media #{$bp-sm} {
 				width: 100%;
 				text-align: center;
+				padding: 0;
 			}
 
 
@@ -193,6 +204,10 @@ header {
 				width: 100%;
 				max-width: 200px;
 				margin-bottom: 40px;
+
+				@media #{$bp-md} {
+					max-width: 100%;
+				}
 
 				@media #{$bp-sm} {
 					max-width: 100%;
