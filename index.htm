@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    
+    <!-- Tema CSS -->
+    <link rel="stylesheet" href="assets/css/gm5.css">
+
+    <script src="assets/js/jquery3_1_1.min.js?nocache=3"></script>
+    <script src="assets/js/funcoes.js"></script>
+
+    <title>GM5</title>
+  </head>
+  <body>
+    
+    <header class="container">
+      
+        <div class="row">
+        
+          <div class="col-sm-2 col-xs-6">
+            <img src="assets/imgs/logo.png" class="logo" alt="GM5">
+          </div>
+
+          <div class="col-sm-10 col-xs-6">
+            <ul class="icones">
+              <li>
+                <a href="#" class="ico-menu" id="abremenu" title="Menu">Menu</a>
+              </li>
+            </ul>
+
+            <nav>
+              <ul class="menu">
+                <li><a href="#" title="home">home</a></li>
+                <li><a href="#" title="quem somos">quem somos</a></li>
+                <li><a href="#" title="nossos serviços">nossos serviços</a></li>
+                <li><a href="#" title="contato">contato</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      
+    </header>
+
+    <div class="hero container-fluid">
+      <picture>
+        <source  media="(min-width: 768px)" srcset="assets/imgs/bg-hero.jpg">
+        <source media="(max-width: 767px)" srcset="assets/imgs/bg-hero-mobile.jpg">
+        <img src="assets/imgs/bg-hero.jpg">
+      </picture>
+    </div>
+
+    <main class="container home">
+      <div class="row">
+        
+        <div class="col-sm-12 col-md-7">
+          <picture>
+            <source  media="(min-width: 768px)" srcset="assets/imgs/highlight-desktop.jpg">
+            <source media="(max-width: 767px)" srcset="assets/imgs/highlight-mobile.jpg">
+            <img src="assets/imgs/highlight-desktop.jpg">
+          </picture>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+          <h2>Quem somos</h2>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia justo sit amet quam porta tempor. Etiam eros sem, mollis eget risus eget, viverra gravida orci. Sed non arcu id nulla fringilla ultricies. Ut aliquet convallis cursus. Pellentesque tincidunt, libero ut volutpat gravida, tellus velit porta lacus, vitae pellentesque urna erat ac eros. In quis ante fermentum, ullamcorper velit ut, viverra risus. Cras volutpat justo tellus, in convallis augue sodales at. Cras varius semper metus laoreet aliquet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-9">
+          <h2>Nossos serviços</h2>
+
+          <script>
+            $.getJSON( "json/servico.json", function(data) {
+              $.each(data.Servico, function(key, value){
+                var obj = value;
+                $("ul[class=servicos]").append("<li><img src=\"assets/imgs/" + obj.Imagem + "\" /><h3>" + obj.Titulo + "</h3><strong>" + obj.Subtitulo + "</strong><p>" + obj.Descricao + "</p></li>");
+              });
+            });
+          </script>
+          <ul class="servicos">            
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+          <h2>Links</h2>
+          <ol type="1" class="lista-links">
+            <li><a href="#">Lorem Ipsum dolet amet</a></li>
+            <li><a href="#">Lorem Ipsum dolet amet</a></li>
+            <li><a href="#">Lorem Ipsum dolet amet</a></li>
+            <li><a href="#">Lorem Ipsum dolet amet</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+        <div class="container">
+          <div class="col-xs-12 col-sm-4">
+            <nav>
+              <ul class="menu">
+                <li><a href="#" title="home">home</a></li>
+                <li><a href="#" title="quem somos">quem somos</a></li>
+                <li><a href="#" title="nossos serviços">nossos serviços</a></li>
+                <li><a href="#" title="contato">contato</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <h4>endereço</h4>
+            <p>nullam lacinia justo sit amet quam porta tempor.</p>
+            <h4>contato</h4>
+            <p><a href="#">contato@gm5.com.br</a></p>
+          </div>
+          <div class="col-xs-12 col-sm-3">
+            <h4>redes sociais</h4>
+            <ul class="links-sociais">
+              <li><a href="#" class="facebook" title="facebook">facebook</a></li>
+              <li><a href="#" class="instagram" title="instagram">instagram</a></li>
+              <li><a href="#" class="twitter" title="twitter">twitter</a></li>
+              <li><a href="#" class="linkedin" title="linkedin">linkedin</a></li>
+            </ul>
+            <p>copyright 2019 - gm5 tecnologia</p>
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>
